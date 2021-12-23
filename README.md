@@ -13,11 +13,8 @@ This app uses the API from <a href="https://developers.themoviedb.org/3">The Mov
 ## Screenshot
 ![ss](https://user-images.githubusercontent.com/41232970/113998952-3a769900-9862-11eb-9fff-72ba0f21ea1e.png)
 
-
-
 ## ✨ Features Project Android:
 - 100% Kotlin
-- Dagger Hilt
 - MVVM architecture
 - Android architecture components
 - Navigation Jetpack
@@ -40,12 +37,10 @@ This app uses the API from <a href="https://developers.themoviedb.org/3">The Mov
 
 ## 📃 Libraries used
 *   [AndroidX](https://developer.android.com/jetpack/androidx/)
-*   [Dagger](https://github.com/google/dagger) 
 *   [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) 
 *   [Glide](https://github.com/bumptech/glide) 
 *   [Lottie](https://github.com/airbnb/lottie-android) 
 *   [Wang.avi](https://github.com/81813780/AVLoadingIndicatorView) 
-*   [Room](https://github.com/googlecodelabs/android-room-with-a-view) 
 *   [Shimmer](https://github.com/facebook/shimmer-android) 
 *   [Retrofit 2](https://github.com/square/retrofit) 
 *   [Gson](https://github.com/google/gson)
@@ -53,24 +48,9 @@ This app uses the API from <a href="https://developers.themoviedb.org/3">The Mov
 *   [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
 *   [DataBinding](https://developer.android.com/topic/libraries/data-binding/)
 *   [OkHttp](https://github.com/square/okhttp)
-*   [Timber](https://github.com/JakeWharton/timber)
  
 
 
 ## License
-    Copyright 2021 Noor Yasser & Omar Mattr
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
-
+    Copyright 2021 Noor Yasser & Omar Mattr & Hamza Elswerki
 
