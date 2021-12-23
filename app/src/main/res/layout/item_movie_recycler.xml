@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="movie"
+            type="com.example.movieappkotlin.model.newMovie.Movie" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:padding="8dp"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="110dp"
+            android:layout_height="160dp"
+            android:background="@color/colorPrimary"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgMovItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/splash_bg"
+                loadImage="@{movie.poster_path}"
+
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:text="8.2"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:background="@drawable/bg_rounded_primary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cardView"
+            app:layout_constraintHorizontal_bias="0.408"
+
+            app:layout_constraintStart_toEndOf="@+id/cardView" />
+
+        <TextView
+            android:id="@+id/movTitleTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{movie.title}"
+            tools:text="asdfadsf"
+            android:textColor="@color/white"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            android:ellipsize="marquee"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cardView"
+            app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+        <TextView
+            android:id="@+id/tvPopularity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/material_color_blue_grey_200"
+            app:layout_constraintStart_toStartOf="@+id/movTitleTv"
+            app:layout_constraintTop_toBottomOf="@+id/movTitleTv"
+            android:text='@{movie.vote_count+"views"}'
+            tools:text="a200"/>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{movie.release_date}"
+            tools:text="asdf"
+            android:textColor="@color/main_orange_color"
+            android:background="@drawable/bg_chips"
+            android:padding="6dp"
+            app:layout_constraintStart_toStartOf="@+id/tvPopularity"
+            app:layout_constraintTop_toBottomOf="@+id/tvPopularity" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+
+            android:text="TextView"
+            android:textColor="@color/main_orange_color"
+            android:background="@drawable/bg_chips"
+            android:padding="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toTopOf="@id/textView4" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:text="@{movie.overview}"
+
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:text="@string/text" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

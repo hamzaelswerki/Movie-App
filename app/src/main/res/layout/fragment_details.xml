@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="details"
+            type="com.example.movieappkotlin.model.detailsMovie.Details" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:alpha="0.8"
+                loadImage="@{details.backdrop_path}"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/angryimg"
+                android:scaleType="centerCrop"
+          />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="159dp"
+                android:layout_height="259dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="132dp"
+                android:elevation="@dimen/elevation_8"
+                android:foreground="@drawable/bg_ripple"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    loadImage="@{details.poster_path}"
+                    android:src="@color/sweet_dialog_bg_color" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageButton
+                android:id="@+id/btnFavorite"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="28dp"
+                android:background="@drawable/button_rounded_primary"
+            android:src="@drawable/ic_baseline_favorite_24"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:layout_constraintVertical_bias="0.4"
+                app:tint="@color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/materialButton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:backgroundTint="@color/material_color_yellow_900"
+                android:text="@string/title_trailer"
+                android:textAllCaps="false"
+                app:cornerRadius="8dp"
+
+                app:icon="@drawable/ic_baseline_play_circle_24"
+                app:layout_constraintStart_toStartOf="@+id/cardView2"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewMovieTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{details.original_title}"
+
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginStart="16dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_16"
+                app:fontFamily="@font/ff_cocon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cardView2"
+                app:layout_constraintTop_toBottomOf="@+id/btnFavorite"
+                tools:text="Here is movie name" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/ratingBarVoteAverage"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+
+                android:rating="@{(float) details.vote_average}"
+                android:numStars="5"
+                android:stepSize="0.1"
+                app:layout_constraintStart_toStartOf="@+id/textViewMovieTitle"
+                app:layout_constraintTop_toBottomOf="@+id/textViewMovieTitle" />
+
+            <TextView
+                android:id="@+id/tvRelease"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+
+                android:text="@{details.release_date}"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:drawablePadding="@dimen/padding_8"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                app:drawableStartCompat="@drawable/ic_baseline_date_range_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/ratingBarVoteAverage"
+                app:layout_constraintTop_toBottomOf="@+id/ratingBarVoteAverage"
+                tools:text="4546" />
+
+            <TextView
+                android:id="@+id/tvPopularity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:drawablePadding="@dimen/padding_8"
+                android:gravity="center_vertical"
+
+                android:text="@{String.valueOf(details.popularity)}"
+
+                android:textColor="@color/white"
+                app:drawableStartCompat="@drawable/ic_baseline_preview_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvRelease"
+                app:layout_constraintTop_toBottomOf="@+id/tvRelease"
+                tools:text="" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCredite"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_credit"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/materialButton" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Overview"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_16"
+                app:fontFamily="@font/ff_cocon"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="@+id/cardView2"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewCredite" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewOverView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="3dp"
+
+                android:text="@{details.overview}"
+                android:textColor="@color/material_color_grey_500"
+                android:textSize="@dimen/font_14"
+                app:layout_constraintStart_toStartOf="@+id/appCompatTextView"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
+                tools:text="@string/text" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

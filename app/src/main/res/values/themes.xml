@@ -1,0 +1,34 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MovieAppQKotlin" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/material_color_blue_grey_900</item>
+        <item name="colorPrimaryVariant">@color/material_color_amber_A700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/colorPrimary</item>
+        <item name="fontFamily">@font/ff_cocon</item>
+    </style>
+
+    <style name="SearchViewStyle" parent="Widget.AppCompat.Light.SearchView">
+        <item name="closeIcon">@drawable/ic_close_black_24dp</item>
+        <item name="searchIcon">@null</item>
+        <item name="searchHintIcon">@drawable/ic_search_black_24dp</item>
+        <item name="iconifiedByDefault">false</item>
+        <item name="editTextBackground">@android:color/transparent</item>
+        <item name="queryBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="SearchViewTheme">
+        <item name="editTextBackground">@android:color/transparent</item>
+        <item name="android:textColorHint">@color/material_color_grey_500</item>
+        <item name="android:textSize">@dimen/font_14</item>
+        <item name="android:editTextColor">@color/material_color_grey_300</item>
+    </style>
+</resources>
